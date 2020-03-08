@@ -1,5 +1,6 @@
 package com.kata.tennis;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Assert;
@@ -18,13 +19,20 @@ public class TennisGameTest
     @Test
     public void shouldReturnLoveAllAtStartOfNewGame()
     {
-        Assert.assertEquals("Love All", tennisGame.getResult());
+        assertEquals("Love All", tennisGame.getResult());
     }
 
     @Test
     public void shouldReturnFifteenLoveWhenPlayerOneScores()
     {
         tennisGame.playerOneScores();
-        Assert.assertEquals("Fifteen, Love", tennisGame.getResult());
+        assertEquals("Fifteen, Love", tennisGame.getResult());
+    }
+
+    @Test
+    public void shouldReturnLoveFifteenWhenPlayerTwoScoresFirst()
+    {
+        tennisGame.playerTwoScores();
+        assertEquals("Love, Fifteen", tennisGame.getResult());
     }
 }
