@@ -22,21 +22,27 @@ public class TennisGame {
         if (firstPlayerScore == secondPlayerScore)
             return scoreValues.get(firstPlayerScore) + " All";
         if (isAdvantantage(firstPlayerScore, secondPlayerScore))
-            return "Advantage Player 1";
-        if (isAdvantantage(secondPlayerScore, firstPlayerScore))
-            return "Advantage Player 2";
+            return "Advantage " + highScorePlayer(firstPlayerScore, secondPlayerScore);
         if (isWinner(firstPlayerScore, secondPlayerScore))
-            return "Winner Player 1";
-        if (isWinner(secondPlayerScore, firstPlayerScore))
-            return "Winner Player 2";
+            return "Winner " + highScorePlayer(firstPlayerScore, secondPlayerScore);
         return scoreValues.get(firstPlayerScore) + ", " + scoreValues.get(secondPlayerScore);
     }
 
+    private String highScorePlayer(int firstPlayerScore, int secondPlayerScore) {
+        return firstPlayerScore > secondPlayerScore ? firstPlayer.getPlayerName() : secondPlayer.getPlayerName();
+    }
+
     private boolean isWinner(int firstPlayerScore, int secondPlayerScore) {
-        return firstPlayerScore >= secondPlayerScore + 2 && firstPlayerScore > FORTY;
+        if(firstPlayerScore >= secondPlayerScore + 2 && firstPlayerScore > FORTY)
+            return true;
+        else
+            return secondPlayerScore >= firstPlayerScore + 2 && secondPlayerScore > FORTY;
     }
 
     private boolean isAdvantantage(int firstPlayerScore, int secondPlayerScore) {
-        return firstPlayerScore == secondPlayerScore + 1 && firstPlayerScore > FORTY;
+        if(firstPlayerScore == secondPlayerScore + 1 && firstPlayerScore > FORTY)
+            return true;
+        else
+            return secondPlayerScore == firstPlayerScore + 1 && secondPlayerScore > FORTY;
     }
 }

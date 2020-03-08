@@ -14,8 +14,8 @@ public class TennisGameTest
     @Before
     public void initializeBowlingObj(){
         tennisGame = new TennisGame();
-        firstPlayer = new Player();
-        secondPlayer = new Player();
+        firstPlayer = new Player("Player 1");
+        secondPlayer = new Player("Player 2");
     }
 
     @Test
