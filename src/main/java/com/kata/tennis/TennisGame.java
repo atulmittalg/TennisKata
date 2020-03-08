@@ -6,20 +6,17 @@ package com.kata.tennis;
  */
 public class TennisGame
 {
-    private int playerOneScore;
-    private int playerTwoScore;
+    private Player firstPlayer;
+    private Player secondPlayer;
+
+    public void setPlayers(Player firstPlayer, Player secondPlayer){
+        this.firstPlayer = firstPlayer;
+        this.secondPlayer = secondPlayer;
+    }
 
     public String getResult() {
-        if(playerOneScore == 1) return "Fifteen, Love";
-        else if(playerTwoScore == 1) return "Love, Fifteen";
+        if(firstPlayer.getPlayerScore() == 1) return "Fifteen, Love";
+        else if(secondPlayer.getPlayerScore() == 1) return "Love, Fifteen";
         else return "Love All";
-    }
-
-    public void playerOneScores() {
-        playerOneScore++;
-    }
-
-    public void playerTwoScores() {
-        playerTwoScore++;
     }
 }
