@@ -27,6 +27,8 @@ public class TennisGame {
             return "Advantage Player 2";
         if (firstPlayerScore >= secondPlayerScore + 2 && firstPlayerScore > FORTY )
             return "Winner Player 1";
+        if (secondPlayerScore >= firstPlayerScore + 2 && secondPlayerScore > FORTY )
+            return "Winner Player 2";
         return scoreValues.get(firstPlayerScore) + ", " + scoreValues.get(secondPlayerScore);
     }
 

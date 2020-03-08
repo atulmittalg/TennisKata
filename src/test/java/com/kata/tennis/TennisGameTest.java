@@ -86,6 +86,12 @@ public class TennisGameTest
         assertEquals("Winner Player 1", tennisGame.getResult());
     }
 
+    @Test
+    public void shouldReturnWinnerPlayer2WhenPlayer2Scores2PointsMoreThanPlayer1(){
+        setPlayerScores(4,6);
+        assertEquals("Winner Player 2", tennisGame.getResult());
+    }
+
     private void setPlayerScores(final int  firstPlayerPoints, final int sceondPlayerPoints){
         int i = 0;
         for(; i<firstPlayerPoints; i++){
