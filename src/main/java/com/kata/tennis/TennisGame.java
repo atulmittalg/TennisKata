@@ -2,11 +2,11 @@ package com.kata.tennis;
 
 import java.util.HashMap;
 
+import static com.kata.tennis.constants.ScoreConstants.*;
+
 public class TennisGame
 {
-    private static final int LOVE = 0;
-    private static final int FIFTEEN = 1;
-    private static final int THIRTY = 2;
+
     private Player firstPlayer;
     private Player secondPlayer;
 
@@ -17,11 +17,14 @@ public class TennisGame
     }
 
     public String getResult() {
-        if(firstPlayer.getPlayerScore() == FIFTEEN && secondPlayer.getPlayerScore() == LOVE) return "Fifteen, Love";
-        else if(firstPlayer.getPlayerScore() == LOVE && secondPlayer.getPlayerScore() == FIFTEEN) return "Love, Fifteen";
-        else if(firstPlayer.getPlayerScore() == FIFTEEN && secondPlayer.getPlayerScore() == FIFTEEN) return "Fifteen All";
-        else if(firstPlayer.getPlayerScore() == THIRTY && secondPlayer.getPlayerScore() == LOVE) return "Thirty, Love";
-        else if(firstPlayer.getPlayerScore() == THIRTY && secondPlayer.getPlayerScore() == THIRTY) return "Thirty All";
-        else return "Love All";
+        if(firstPlayer.getPlayerScore() == FIFTEEN && secondPlayer.getPlayerScore() == LOVE)
+            return "Fifteen, Love";
+        if(firstPlayer.getPlayerScore() == LOVE && secondPlayer.getPlayerScore() == FIFTEEN)
+            return "Love, Fifteen";
+        if(firstPlayer.getPlayerScore() == THIRTY && secondPlayer.getPlayerScore() == LOVE)
+            return "Thirty, Love";
+        if(firstPlayer.getPlayerScore() == secondPlayer.getPlayerScore())
+            return scoreValues.get(firstPlayer.getPlayerScore()) + " All";
+        return "Love All";
     }
 }
