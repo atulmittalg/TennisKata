@@ -36,8 +36,26 @@ Creating test cases and developing accordingly to pass the test.
 5. Setting score to Thirty All when player 1 and 2 score 2 points.
 6. Setting score to Forty, Love when player 1 scores 3 points.
 7. Setting score to Deuce when both players score 3 points.
+8. Setting score to Advantagw when player scores point after Deuce.
+9. Determining winner if player scores 2 points more than the opponent player.
 
-## System Requirements
+## Launch
+
+#### System Requirements
+
 1. Java 1.6 or higher.
 2. Maven - For Dependency Management (JUnit Dependency Added).
 3. Intellij (or) any IDE supporting JAVA.
+
+#### Running The Tests
+
+1. Download project as zip file and unzip the same to a folder. 
+2. In IDE Go to 
+    1. File -> Import -> select Existing Maven Project option -> Next -> Browse extracted folder and Finish.
+    2. Right click project in Project Explorer window and select Run As -> Maven install
+3. Once above steps done open <b>TennisGameTest</b> class and right click file and choose Run As -> JUnit Test
+
+
+### Author
+
+Atul Mittal<p>atulmittalg@gmail.com<p>
