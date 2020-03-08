@@ -6,12 +6,14 @@ package com.kata.tennis;
  */
 public class TennisGame
 {
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-    }
+    private int playerOneScore;
 
     public String getResult() {
-        return "Love All";
+        if(playerOneScore == 1) return "Fifteen, Love";
+        else return "Love All";
+    }
+
+    public void playerOneScores() {
+        playerOneScore++;
     }
 }
