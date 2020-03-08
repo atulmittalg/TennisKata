@@ -23,6 +23,8 @@ public class TennisGame
             return "Love, Fifteen";
         if(firstPlayer.getPlayerScore() == THIRTY && secondPlayer.getPlayerScore() == LOVE)
             return "Thirty, Love";
+        if(firstPlayer.getPlayerScore() == FORTY && secondPlayer.getPlayerScore() == LOVE)
+            return "Forty, Love";
         if(firstPlayer.getPlayerScore() == secondPlayer.getPlayerScore())
             return scoreValues.get(firstPlayer.getPlayerScore()) + " All";
         return "Love All";
