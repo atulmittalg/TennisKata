@@ -10,4 +10,8 @@ public class TennisGame
     {
         System.out.println( "Hello World!" );
     }
+
+    public String getResult() {
+        return "Love All";
+    }
 }

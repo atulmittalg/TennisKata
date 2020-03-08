@@ -2,19 +2,15 @@ package com.kata.tennis;
 
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
 public class TennisGameTest
 {
-    /**
-     * Rigorous Test :-)
-     */
     @Test
-    public void shouldAnswerWithTrue()
+    public void shouldReturnLoveAllAtStartOfNewGame()
     {
-        assertTrue( true );
+        TennisGame tennisGame = new TennisGame();
+        Assert.assertEquals("Love All", tennisGame.getResult());
     }
 }
