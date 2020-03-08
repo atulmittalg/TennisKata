@@ -20,7 +20,8 @@ public class TennisGame
         if(firstPlayer.getPlayerScore() == FIFTEEN && secondPlayer.getPlayerScore() == LOVE) return "Fifteen, Love";
         else if(firstPlayer.getPlayerScore() == LOVE && secondPlayer.getPlayerScore() == FIFTEEN) return "Love, Fifteen";
         else if(firstPlayer.getPlayerScore() == FIFTEEN && secondPlayer.getPlayerScore() == FIFTEEN) return "Fifteen All";
-        else if(firstPlayer.getPlayerScore() == THIRTY && secondPlayer.getPlayerScore() == 0) return "Thirty, Love";
+        else if(firstPlayer.getPlayerScore() == THIRTY && secondPlayer.getPlayerScore() == LOVE) return "Thirty, Love";
+        else if(firstPlayer.getPlayerScore() == THIRTY && secondPlayer.getPlayerScore() == THIRTY) return "Thirty All";
         else return "Love All";
     }
 }
