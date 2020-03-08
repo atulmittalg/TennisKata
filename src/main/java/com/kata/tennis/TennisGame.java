@@ -17,10 +17,10 @@ public class TennisGame
     }
 
     public String getResult() {
-        if(firstPlayer.getPlayerScore() == secondPlayer.getPlayerScore() && firstPlayer.getPlayerScore() != FORTY)
-            return scoreValues.get(firstPlayer.getPlayerScore()) + " All";
-        else if (firstPlayer.getPlayerScore() == secondPlayer.getPlayerScore() && firstPlayer.getPlayerScore() == FORTY)
+        if (firstPlayer.getPlayerScore() == secondPlayer.getPlayerScore() && firstPlayer.getPlayerScore() == FORTY)
             return "Deuce";
+        if(firstPlayer.getPlayerScore() == secondPlayer.getPlayerScore())
+            return scoreValues.get(firstPlayer.getPlayerScore()) + " All";
         return scoreValues.get(firstPlayer.getPlayerScore()) +", "+ scoreValues.get(secondPlayer.getPlayerScore());
     }
 }
