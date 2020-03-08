@@ -56,11 +56,16 @@ public class TennisGameTest
         setPlayerScores(2,2);
         assertEquals("Thirty All", tennisGame.getResult());
     }
-
     @Test
     public void shouldReturnFortyLoveWhenPlayerOneScore3Points(){
         setPlayerScores(3,0);
         assertEquals("Forty, Love", tennisGame.getResult());
+    }
+
+    @Test
+    public void shouldReturnDeuceWhenBothPlayersScore3Points(){
+        setPlayerScores(3,3);
+        assertEquals("Deuce", tennisGame.getResult());
     }
 
     private void setPlayerScores(final int  firstPlayerPoints, final int sceondPlayerPoints){
