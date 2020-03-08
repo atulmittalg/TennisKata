@@ -1,30 +1,34 @@
 package com.kata.tennis;
 
-import java.util.HashMap;
+import static com.kata.tennis.constants.ScoreConstants.FORTY;
+import static com.kata.tennis.constants.ScoreConstants.scoreValues;
 
-import static com.kata.tennis.constants.ScoreConstants.*;
-
-public class TennisGame
-{
+public class TennisGame {
 
     private Player firstPlayer;
     private Player secondPlayer;
 
 
-    public void setPlayers(Player firstPlayer, Player secondPlayer){
+    public void setPlayers(Player firstPlayer, Player secondPlayer) {
         this.firstPlayer = firstPlayer;
         this.secondPlayer = secondPlayer;
     }
 
     public String getResult() {
-        if (firstPlayer.getPlayerScore() == secondPlayer.getPlayerScore() && firstPlayer.getPlayerScore() >= FORTY)
+        int firstPlayerScore = firstPlayer.getPlayerScore();
+        int secondPlayerScore = secondPlayer.getPlayerScore();
+        if (firstPlayerScore == secondPlayerScore && firstPlayerScore >= FORTY)
             return "Deuce";
-        if(firstPlayer.getPlayerScore() == secondPlayer.getPlayerScore())
-            return scoreValues.get(firstPlayer.getPlayerScore()) + " All";
-        if (firstPlayer.getPlayerScore() > secondPlayer.getPlayerScore() && firstPlayer.getPlayerScore() > FORTY)
+        if (firstPlayerScore == secondPlayerScore)
+            return scoreValues.get(firstPlayerScore) + " All";
+        if (isAdvantantage(firstPlayerScore, secondPlayerScore))
             return "Advantage Player 1";
-        if (firstPlayer.getPlayerScore() < secondPlayer.getPlayerScore() && firstPlayer.getPlayerScore() >= FORTY)
+        if (isAdvantantage(secondPlayerScore, firstPlayerScore))
             return "Advantage Player 2";
-        return scoreValues.get(firstPlayer.getPlayerScore()) +", "+ scoreValues.get(secondPlayer.getPlayerScore());
+        return scoreValues.get(firstPlayerScore) + ", " + scoreValues.get(secondPlayerScore);
+    }
+
+    private boolean isAdvantantage(int firstPlayerScore, int secondPlayerScore) {
+        return firstPlayerScore > secondPlayerScore && firstPlayerScore > FORTY;
     }
 }
