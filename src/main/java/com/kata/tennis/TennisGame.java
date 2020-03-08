@@ -25,11 +25,15 @@ public class TennisGame {
             return "Advantage Player 1";
         if (isAdvantantage(secondPlayerScore, firstPlayerScore))
             return "Advantage Player 2";
-        if (firstPlayerScore >= secondPlayerScore + 2 && firstPlayerScore > FORTY )
+        if (isWinner(firstPlayerScore, secondPlayerScore))
             return "Winner Player 1";
-        if (secondPlayerScore >= firstPlayerScore + 2 && secondPlayerScore > FORTY )
+        if (isWinner(secondPlayerScore, firstPlayerScore))
             return "Winner Player 2";
         return scoreValues.get(firstPlayerScore) + ", " + scoreValues.get(secondPlayerScore);
+    }
+
+    private boolean isWinner(int firstPlayerScore, int secondPlayerScore) {
+        return firstPlayerScore >= secondPlayerScore + 2 && firstPlayerScore > FORTY;
     }
 
     private boolean isAdvantantage(int firstPlayerScore, int secondPlayerScore) {
