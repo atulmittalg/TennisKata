@@ -68,6 +68,12 @@ public class TennisGameTest
         assertEquals("Deuce", tennisGame.getResult());
     }
 
+    @Test
+    public void shouldReturnAdvantagePlayer1WhenPlayer1ScoresPointAfterDeuce(){
+        setPlayerScores(4,3);
+        assertEquals("Advantage Player 1", tennisGame.getResult());
+    }
+
     private void setPlayerScores(final int  firstPlayerPoints, final int sceondPlayerPoints){
         int i = 0;
         for(; i<firstPlayerPoints; i++){

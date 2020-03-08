@@ -21,6 +21,8 @@ public class TennisGame
             return "Deuce";
         if(firstPlayer.getPlayerScore() == secondPlayer.getPlayerScore())
             return scoreValues.get(firstPlayer.getPlayerScore()) + " All";
+        if (firstPlayer.getPlayerScore() > secondPlayer.getPlayerScore() && firstPlayer.getPlayerScore() > FORTY)
+            return "Advantage Player 1";
         return scoreValues.get(firstPlayer.getPlayerScore()) +", "+ scoreValues.get(secondPlayer.getPlayerScore());
     }
 }
