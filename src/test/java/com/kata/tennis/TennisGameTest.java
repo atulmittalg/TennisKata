@@ -1,11 +1,9 @@
 package com.kata.tennis;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class TennisGameTest
 {
@@ -41,5 +39,13 @@ public class TennisGameTest
         secondPlayer.playerScoresPoint();
         tennisGame.setPlayers(firstPlayer, secondPlayer);
         assertEquals("Love, Fifteen", tennisGame.getResult());
+    }
+
+    @Test
+    public void shouldReturnFifteenAllWhenBothPlayersScorePointEach(){
+        firstPlayer.playerScoresPoint();
+        secondPlayer.playerScoresPoint();
+        tennisGame.setPlayers(firstPlayer, secondPlayer);
+        assertEquals("Fifteen All", tennisGame.getResult());
     }
 }

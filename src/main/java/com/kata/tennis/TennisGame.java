@@ -15,8 +15,9 @@ public class TennisGame
     }
 
     public String getResult() {
-        if(firstPlayer.getPlayerScore() == 1) return "Fifteen, Love";
-        else if(secondPlayer.getPlayerScore() == 1) return "Love, Fifteen";
+        if(firstPlayer.getPlayerScore() == 1 && secondPlayer.getPlayerScore() == 0) return "Fifteen, Love";
+        else if(secondPlayer.getPlayerScore() == 1 && firstPlayer.getPlayerScore() == 0) return "Love, Fifteen";
+        else if(firstPlayer.getPlayerScore() == 1 && secondPlayer.getPlayerScore() == 1) return "Fifteen All";
         else return "Love All";
     }
 }
