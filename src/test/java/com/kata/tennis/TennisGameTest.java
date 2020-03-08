@@ -21,7 +21,7 @@ public class TennisGameTest
     @Test
     public void shouldReturnLoveAllAtStartOfNewGame()
     {
-        tennisGame.setPlayers(firstPlayer, secondPlayer);
+        setPlayerScores(0,0);
         assertEquals("Love All", tennisGame.getResult());
     }
 
@@ -29,7 +29,6 @@ public class TennisGameTest
     public void shouldReturnFifteenLoveWhenPlayerOneScores()
     {
         setPlayerScores(1,0);
-        tennisGame.setPlayers(firstPlayer, secondPlayer);
         assertEquals("Fifteen, Love", tennisGame.getResult());
     }
 
@@ -37,15 +36,19 @@ public class TennisGameTest
     public void shouldReturnLoveFifteenWhenPlayerTwoScoresFirst()
     {
         setPlayerScores(0,1);
-        tennisGame.setPlayers(firstPlayer, secondPlayer);
         assertEquals("Love, Fifteen", tennisGame.getResult());
     }
 
     @Test
     public void shouldReturnFifteenAllWhenBothPlayersScorePointEach(){
         setPlayerScores(1,1);
-        tennisGame.setPlayers(firstPlayer, secondPlayer);
         assertEquals("Fifteen All", tennisGame.getResult());
+    }
+
+    @Test
+    public void shouldReturnThirtyLoveWhenPlayerOneScore2Points(){
+        setPlayerScores(2,0);
+        assertEquals("Thirty Love", tennisGame.getResult());
     }
 
     private void setPlayerScores(final int  firstPlayerPoints, final int sceondPlayerPoints){
@@ -56,5 +59,6 @@ public class TennisGameTest
         for(i=0; i<sceondPlayerPoints; i++){
             secondPlayer.playerScoresPoint();
         }
+        tennisGame.setPlayers(firstPlayer, secondPlayer);
     }
 }
