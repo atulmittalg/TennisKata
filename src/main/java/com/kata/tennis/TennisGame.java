@@ -17,16 +17,8 @@ public class TennisGame
     }
 
     public String getResult() {
-        if(firstPlayer.getPlayerScore() == FIFTEEN && secondPlayer.getPlayerScore() == LOVE)
-            return "Fifteen, Love";
-        if(firstPlayer.getPlayerScore() == LOVE && secondPlayer.getPlayerScore() == FIFTEEN)
-            return "Love, Fifteen";
-        if(firstPlayer.getPlayerScore() == THIRTY && secondPlayer.getPlayerScore() == LOVE)
-            return "Thirty, Love";
-        if(firstPlayer.getPlayerScore() == FORTY && secondPlayer.getPlayerScore() == LOVE)
-            return "Forty, Love";
         if(firstPlayer.getPlayerScore() == secondPlayer.getPlayerScore())
             return scoreValues.get(firstPlayer.getPlayerScore()) + " All";
-        return "Love All";
+        return scoreValues.get(firstPlayer.getPlayerScore()) +", "+ scoreValues.get(secondPlayer.getPlayerScore());
     }
 }
